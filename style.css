@@ -1,0 +1,61 @@
+.navi{
+	font-family: "Audiowide", sans-serif;
+}
+.main {
+	margin: auto;
+	padding-top: 50px;
+	text-align: center;
+    display: block;
+    align-items: center;
+}
+
+.descript, 
+.form-inline{
+	width: 42%;
+	margin: auto;
+	font-weight: 400;
+	padding-bottom: 30px;
+	justify-content: center;
+}
+
+.group-form{
+	width: 10%;
+	margin: auto;
+	padding-right: 180px;
+}
+
+.link{
+	/*margin: 100px;*/
+	width: 30%;
+	margin: auto;
+}
+
+.resultcontainer {
+	width: 50%;
+	padding: auto;
+}
+
+@media screen and (max-width: 600px){
+	img {
+    vertical-align: middle;
+    border-style: none;
+    width: 150px;
+    height: 150px;
+	}
+
+	h1 {
+		font-size: 1.5rem;
+	}
+
+	.descript,
+	 .form-inline {
+    width: 82%;
+    margin: auto;
+    font-weight: 400;
+    padding-bottom: 30px;
+    justify-content: center;
+	}
+
+}
+
+
