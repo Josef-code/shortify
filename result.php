@@ -1,11 +1,39 @@
 <?php
 
 include 'inc/header.php';
-require 'controller.php';
+include 'controller.php';
 
-	$check = new Welcome();
+if (!isset($_GET["url"])) {
+
+	 header("Location: index.php");
+
+	} else {
+
+		$urlvalue = $_GET["url"];
+
+		echo $urlvalue;
+
+		// $cURLConnection = curl_init();
+
+		// curl_setopt($cURLConnection, CURLOPT_URL, 'https://api.shrtco.de/v2/shorten?url=google.com');
+		// curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+
+		// $linkList = curl_exec($cURLConnection);
+
+		// $responseList = json_decode($linkList, true);
+
+		// echo $responseList["result"]["short_link2"];
+
+		// // var_dump(json_decode($linkList, true));
+
+		// curl_close($cURLConnection);
+
+	}
 
 ?>
+
+
+
 
 <div class="container resultcontainer">
 	<div class="card">
@@ -15,7 +43,7 @@ require 'controller.php';
 	  <div class="card-body">
 	    <h5 class="card-title">
 			<div class="alert alert-success" role="alert">
-			  URL successfully shorten!
+			  URL shorten successfully!;
 			</div>
 		</h5>
 	    <p class="card-text">Congratulations! Your long URL has been successfully shorten and you can start sharing the links to grow your brand. Remember to tell your friends about shortify.</p>
@@ -23,35 +51,3 @@ require 'controller.php';
 	  </div>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- // $cURLConnection = curl_init();
-
-// curl_setopt($cURLConnection, CURLOPT_URL, 'https://api.shrtco.de/v2/shorten?url=google.com');
-// curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
-
-// $linkList = curl_exec($cURLConnection);
-
-// $responseList = json_decode($linkList, true);
-
-// echo $responseList["result"]["short_link2"];
-
-// // var_dump(json_decode($linkList, true));
-
-// curl_close($cURLConnection); -->

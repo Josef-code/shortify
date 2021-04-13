@@ -1,7 +1,7 @@
 <?php 
 
-require 'inc/header.php';
-require 'controller.php';
+include 'inc/header.php';
+include 'controller.php';
 
 ?>
 
