@@ -32,8 +32,9 @@
 
 .resultcontainer {
 	width: 50%;
-	padding: auto;
+	padding-top: 120px;
 }
+
 
 @media screen and (max-width: 600px){
 	img {
@@ -54,6 +55,11 @@
     font-weight: 400;
     padding-bottom: 30px;
     justify-content: center;
+	}
+
+	.resultcontainer {
+	width: 90%;
+	padding-top: 100px;
 	}
 
 }

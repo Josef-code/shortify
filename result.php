@@ -11,20 +11,18 @@ if (!isset($_GET["url"])) {
 
 		$urlvalue = $_GET["url"];
 
-		echo $urlvalue;
+		$cURLConnection = curl_init();
 
-		// $cURLConnection = curl_init();
+		curl_setopt($cURLConnection, CURLOPT_URL, "https://api.shrtco.de/v2/shorten?url='$urlvalue" );
+		curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
 
-		// curl_setopt($cURLConnection, CURLOPT_URL, 'https://api.shrtco.de/v2/shorten?url=google.com');
-		// curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
+		$linkList = curl_exec($cURLConnection);
 
-		// $linkList = curl_exec($cURLConnection);
+		$responseList = json_decode($linkList, true);
 
-		// $responseList = json_decode($linkList, true);
+		// $responseList["result"]["short_link2"];
 
-		// echo $responseList["result"]["short_link2"];
-
-		// // var_dump(json_decode($linkList, true));
+		// var_dump(json_decode($linkList, true));
 
 		// curl_close($cURLConnection);
 
@@ -38,12 +36,12 @@ if (!isset($_GET["url"])) {
 <div class="container resultcontainer">
 	<div class="card">
 	  <div class="card-header">
-	    <h5>Result:</h5>
+	    <h5>URL shortened successfully! </h5> 
 	  </div>
 	  <div class="card-body">
 	    <h5 class="card-title">
 			<div class="alert alert-success" role="alert">
-			  URL shorten successfully!;
+			 	<?php echo $responseList["result"]["short_link2"]; ?>
 			</div>
 		</h5>
 	    <p class="card-text">Congratulations! Your long URL has been successfully shorten and you can start sharing the links to grow your brand. Remember to tell your friends about shortify.</p>
@@ -51,3 +49,9 @@ if (!isset($_GET["url"])) {
 	  </div>
 	</div>
 </div>
+
+<?php 
+
+curl_close($cURLConnection);
+
+?>
